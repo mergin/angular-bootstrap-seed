@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouteReuseStrategy } from '@angular/router';
+// import { RouteReuseStrategy } from '@angular/router';
 
 // modules
 import { AppRoutingModule } from './app-routing.module';
@@ -11,11 +11,12 @@ import { CoreModule } from './core/core.module';
 // components
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { DragDropDirective } from './_directives/drag-drop.directive';
 // import { CustomReuseStrategy } from './shared/custom-reuse-strategy';
 
 @NgModule({
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     imports: [
         BrowserModule,

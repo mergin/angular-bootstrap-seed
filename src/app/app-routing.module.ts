@@ -8,6 +8,7 @@ const routes: Routes = [
     { path: 'main', loadChildren: './main/main.module#MainModule', data: { key: 'main' } },
     { path: 'form', loadChildren: './form/form.module#FormModule', data: { key: 'form' } },
     { path: 'gifs', loadChildren: './gifs/gifs.module#GifsModule', data: { key: 'gifs' } },
+    { path: 'fileupload', loadChildren: './file-upload/file-upload.module#FileUploadModule', data: { key: 'fileupload' } },
     { path: '**', component: CustomErrorPageComponent, data: { key: 'error' } },
     // { path: 'gifs', loadChildren: () => import('./gifs/gifs.module').then(m => m.GifsModule) },
     // { path: 'form', loadChildren: () => import('./form/form.module').then(m => m.FormModule) },
