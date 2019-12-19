@@ -1,5 +1,11 @@
 export const environment = {
     production: true,
+    giphy: {
+        host: 'http://api.giphy.com/',
+        baseUrl: 'v1/gifs/',
+        apiKey: 'dc6zaTOxFJmzC',
+        defaultSearch: 'cats'
+    },
     defaultLanguage: {
         code: 'en',
         name: 'English'

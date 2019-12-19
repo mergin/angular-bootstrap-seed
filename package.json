@@ -7,8 +7,12 @@
         "start:aot": "ng serve --aot",
         "prebuild": "npm run lint",
         "build": "ng build --aot",
+        "build:stats": "ng build --aot --stats-json",
         "prebuild:prod": "npm run lint",
+        "prebuild:prod:stats": "npm run lint",
         "build:prod": "ng build --prod --aot --subresourceIntegrity",
+        "build:prod:stats": "ng build --prod --aot --subresourceIntegrity --stats-json",
+        "analyze": "webpack-bundle-analyzer dist/angular-bootstrap-seed/stats.json",
         "clean": "rm package-lock.json; rm -rf dist/; rm -rf node_modules/",
         "clean:i": "npm run clean && npm install",
         "test": "ng test",
@@ -54,6 +58,7 @@
         "protractor": "~5.4.2",
         "ts-node": "~8.5.4",
         "tslint": "~5.20.1",
-        "typescript": "~3.5.3"
+        "typescript": "~3.5.3",
+        "webpack-bundle-analyzer": "^3.6.0"
     }
 }
