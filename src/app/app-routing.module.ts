@@ -5,9 +5,9 @@ import { CustomErrorPageComponent } from './core/components/custom-error-page/cu
 
 const routes: Routes = [
     { path: '', redirectTo: '/main', pathMatch: 'full' },
-    { path: 'main', loadChildren: './main/main.module#MainModule', data: { key: 'main' } },
-    { path: 'form', loadChildren: './form/form.module#FormModule', data: { key: 'form' } },
-    { path: 'gifs', loadChildren: './gifs/gifs.module#GifsModule', data: { key: 'gifs' } },
+    { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule), data: { key: 'main' } },
+    { path: 'form', loadChildren: () => import('./form/form.module').then(m => m.FormModule), data: { key: 'form' } },
+    { path: 'gifs', loadChildren: () => import('./gifs/gifs.module').then(m => m.GifsModule), data: { key: 'gifs' } },
     { path: '**', component: CustomErrorPageComponent, data: { key: 'error' } },
     // { path: 'gifs', loadChildren: () => import('./gifs/gifs.module').then(m => m.GifsModule) },
     // { path: 'form', loadChildren: () => import('./form/form.module').then(m => m.FormModule) },
