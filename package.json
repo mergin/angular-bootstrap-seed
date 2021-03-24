@@ -13,7 +13,7 @@
         "build:prod": "ng build --prod --aot --subresourceIntegrity",
         "build:prod:stats": "ng build --prod --aot --subresourceIntegrity --stats-json",
         "analyze": "webpack-bundle-analyzer dist/angular-bootstrap-seed/stats.json",
-        "clean": "rm package-lock.json; rm -rf dist/ rm -rf node_modules/",
+        "clean": "rm -rf package-lock.json dist/ rm -rf node_modules/",
         "clean:install": "npm run clean && npm install",
         "test": "ng test",
         "lint": "ng lint",
