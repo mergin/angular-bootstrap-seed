@@ -17,14 +17,10 @@
         "clean:install": "npm run clean && npm install",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "prepare": "husky install"
     },
     "private": true,
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
     "dependencies": {
         "@angular/animations": "~11.2.6",
         "@angular/common": "~11.2.6",
