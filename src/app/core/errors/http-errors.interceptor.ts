@@ -3,7 +3,8 @@ import {
     HttpInterceptor,
     HttpHandler,
     HttpRequest,
-    HttpEvent
+    HttpEvent,
+    HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { retry, catchError, timeout } from 'rxjs/operators';
@@ -39,6 +40,10 @@ export class HttpErrorsInterceptor implements HttpInterceptor {
     private handleError<T>(method: string, url: string, result?: T): (error: any) => Observable<T> {
         return (error: any): Observable<T> => {
 
+            if (error instanceof HttpErrorResponse) {
+                this.handleServerSideError(error);
+            }
+
             // error message
             let errorMessage = 'Something bad happened; please try again later.';
             this.translateService.get('common.error_message')
@@ -59,5 +64,22 @@ export class HttpErrorsInterceptor implements HttpInterceptor {
             // return an observable with a user-facing error message
             return throwError(errorMessage);
         };
+    }
+
+    /**
+     *
+     * @param error - HTTP error object
+     */
+    private handleServerSideError(error: HttpErrorResponse): void {
+        switch (error.status) {
+            case 401:
+                console.error('Server side error 401');
+                break;
+            case 403:
+                console.error('Server side error 403');
+                break;
+            default:
+                break;
+        }
     }
 }
